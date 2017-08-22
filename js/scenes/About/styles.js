@@ -4,7 +4,7 @@ export const styles = StyleSheet.create({
   container: {
     flex: 1,
   },
-  r10Logo: {`
+  r10Logo: {
     flex: 1,
     alignItems: 'center',
     paddingTop: 16
