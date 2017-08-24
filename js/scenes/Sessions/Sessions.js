@@ -1,14 +1,11 @@
-import React, { Component } from 'react';
-import PropTypes from 'prop-types';
+import React from 'react';
+// import PropTypes from 'prop-types';
 import {
   Text,
-  StyleSheet,
-  FlatList,
-  Image,
   View
 } from 'react-native';
 
-import { styles } from './styles'
+// import { styles } from './styles'
 
 const Sessions = () => (
   <View >
