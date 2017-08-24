@@ -23,4 +23,7 @@ export const styles = StyleSheet.create({
       }
     })
   },
+  colors: {
+    color: 'red',
+  },
 })

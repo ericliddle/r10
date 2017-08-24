@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import { ActivityIndicator } from 'react-native';
 
-import Sessions from './Sessions';
+import { Sessions } from './Sessions';
 
 class SessionsContainer extends Component {
 
@@ -20,9 +21,13 @@ class SessionsContainer extends Component {
   }
 
   render() {
-    return (
-      <Sessions />
-    )
+    if (this.state.isLoading) {
+      return (
+        <ActivityIndicator animating={true} size="small" color="black" />
+      );
+    } else {
+      return <Sessions />
+    }
   }
 }
 

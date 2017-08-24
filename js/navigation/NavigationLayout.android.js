@@ -5,7 +5,7 @@ import {
   DrawerNavigationItem,
 } from '@expo/ex-navigation';
 
-import {StyleSheet} from 'react-native'
+import { StyleSheet } from 'react-native'
 
 import {
   Text,
@@ -54,7 +54,7 @@ class DrawerNavigationLaytout extends Component {
           <StackNavigation
             id="schedule"
             defaultRouteConfig={defaultRouteConfig}
-            NavigatorUID="schedule"
+            navigatorUID="schedule"
             initialRoute={Router.getRoute('schedule')}
           />
         </DrawerNavigationItem>
@@ -67,7 +67,7 @@ class DrawerNavigationLaytout extends Component {
           <StackNavigation
             id="about"
             defaultRouteConfig={defaultRouteConfig}
-            NavigatorUID="about"
+            navigatorUID="about"
             initialRoute={Router.getRoute('about')}
           />
         </DrawerNavigationItem>
@@ -80,7 +80,7 @@ class DrawerNavigationLaytout extends Component {
           <StackNavigation
             id="faves"
             defaultRouteConfig={defaultRouteConfig}
-            NavigatorUID="faves"
+            navigatorUID="faves"
             initialRoute={Router.getRoute('faves')}
           />
         </DrawerNavigationItem>
@@ -88,7 +88,7 @@ class DrawerNavigationLaytout extends Component {
     );
   }
 
-  
+
 
   renderIcon(iconName, isSelected) {
     const color = isSelected ? 'white' : colors.mediumGrey

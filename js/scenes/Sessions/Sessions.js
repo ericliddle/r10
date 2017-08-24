@@ -17,7 +17,7 @@ const Sessions = () => (
 )
 
 Sessions.PropTypes = {
-  
-  };
-  
-  export default Sessions;
+
+};
+
+export default Sessions;

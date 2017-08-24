@@ -49,7 +49,8 @@ class NavigationLayout extends Component {
           renderTitle={this.renderTitle}>
           <StackNavigation
             defaultRouteConfig={defaultRouteConfig}
-            NavigatorUID="schedule"
+            //navigtator is lowercase
+            navigatorUID="schedule"
             id="schedule"
             initialRoute={Router.getRoute('schedule')}
           />
@@ -61,7 +62,7 @@ class NavigationLayout extends Component {
           renderTitle={this.renderTitle}>
           <StackNavigation
             defaultRouteConfig={defaultRouteConfig}
-            NavigatorUID="about"
+            navigatorUID="about"
             id="about"
             initialRoute={Router.getRoute('about')}
           />
@@ -74,7 +75,7 @@ class NavigationLayout extends Component {
           renderTitle={this.renderTitle}>
           <StackNavigation
             defaultRouteConfig={defaultRouteConfig}
-            NavigatorUID="maps"
+            navigatorUID="maps"
             id="maps"
             initialRoute={Router.getRoute('maps')}
           />
@@ -88,7 +89,7 @@ class NavigationLayout extends Component {
           renderTitle={this.renderTitle}>
           <StackNavigation
             defaultRouteConfig={defaultRouteConfig}
-            NavigatorUID="faves"
+            navigatorUID="faves"
             id="faves"
             initialRoute={Router.getRoute('faves')}
           />
