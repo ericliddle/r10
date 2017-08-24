@@ -1,16 +1,17 @@
 import React, { Component } from 'react';
+
 import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
+import { ActivityIndicator } from 'react-native';
 
 import About from './About';
 
+import { getConductData } from '../../redux/modules/conduct';
+
 class AboutContainer extends Component {
 
-  constructor() {
-    super();
-    this.state = {
-      data: [],
-      isLoading: true,
-    };
+  componentDidMount() {
+    this.props.dispatch(getConductData());
   }
 
   static route = {
@@ -19,31 +20,24 @@ class AboutContainer extends Component {
     }
   }
 
-  componentDidMount() {
-    let endpoint = 'https://r10app-95fea.firebaseio.com/code_of_conduct.json';
-    fetch(endpoint)
-      // if fetch is successful, read our JSON out of the response
-      .then(response => response.json())
-      .then(data => {
-        this.setState({ data });
-      })
-      .catch(error => console.log(`Error fetching JSON: ${error}`));
-  }
-
-  componentDidUpdate() {
-    if (this.state.data && this.state.isLoading) {
-      this.setState({ isLoading: false });
-    }
-  }
-
-  static propTypes = {
-
-  };
-
   render() {
-    return <About data={this.state.data} />;
-
+    if (this.props.isLoading) {
+      return (
+        <ActivityIndicator animating={true} size="small" color="black" />
+      )
+    } else {
+      return (
+        <About data={this.props.data} />
+      );
+    }
   }
 }
 
-export default AboutContainer;
+function mapStateToProps(state) {
+  return {
+    isLoading: state.conduct.loading,
+    data: state.conduct.data,
+  }
+}
+
+export default connect(mapStateToProps)(AboutContainer);

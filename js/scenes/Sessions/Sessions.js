@@ -10,14 +10,14 @@ import {
 
 import { styles } from './styles'
 
-const Maps = () => (
+const Sessions = () => (
   <View >
-    <Text>Maps page</Text>
+    <Text>Sessions Scene</Text>
   </View >
 )
 
-Maps.PropTypes = {
+Sessions.PropTypes = {
   
   };
   
-  export default Maps;
+  export default Sessions;

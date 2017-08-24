@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
 
+import { Provider } from 'react-redux';
+
 import {
   StyleSheet,
   StatusBar,
-  NavigationStyles,
   // Text,
   // View
 } from 'react-native';
@@ -11,16 +12,13 @@ import {
 import {
   NavigationProvider,
   StackNavigation,
-  NavigationContext
+  NavigationContext,
+  NavigationStyles  
 } from '@expo/ex-navigation';
 
 
 import Router from './navigation/routes';
-import {Store} from './redux/store';
-
-import NavigationLayout from './navigation/NavigationLayout';
-import About from './scenes/About';
-
+import Store from './redux/store';
 
 const navigationContext = new NavigationContext({
   router: Router,
@@ -30,37 +28,22 @@ const navigationContext = new NavigationContext({
 export default class R10 extends Component {
   render() {
     return (
-      <NavigationProvider router={Router}>
-        <StatusBar barStyle={"light-content"} />
-        <StackNavigation
-          
-          NavigatorUID="root"
-          id="root"
-          initialRoute={Router.getRoute('navigation')}
-        />
-      </NavigationProvider>
+      <Provider store={Store}>
+        <NavigationProvider context={navigationContext}>
+          <StatusBar barStyle={"light-content"} />
+          <StackNavigation
+            navigatorUID="root"
+            id="root"
+            initialRoute={Router.getRoute('navigation')}
+            defaultRouteConfig={{
+              styles: { ...NavigationStyles.SlideVertical },
+            }}
+          />
+        </NavigationProvider>
+      </Provider>
     );
   }
 }
-
-//TODO: Add below initial route above
-// defaultRouteConfig={{
-// styles: {...NavigationStyles.SlideVertical },
-// }}
-class AboutScreen extends Component {
-  static route = {
-    navigationBar: {
-      title:'About',
-    }
-  }
-
-  render() {
-    return (
-      <About />
-    )
-  }
-}
-
 
 const styles = StyleSheet.create({
   container: {

@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
-import Faves from './Faves';
+import Sessions from './Sessions';
 
-class FavesContainer extends Component {
+class SessionsContainer extends Component {
 
   constructor() {
     super();
@@ -15,16 +15,15 @@ class FavesContainer extends Component {
 
   static route = {
     navigationBar: {
-      title: 'Faves',
+      title: 'Sessions',
     }
   }
 
- render() {
-   return <Faves />
- }
+  render() {
+    return (
+      <Sessions />
+    )
+  }
+}
 
-  static propTypes = {
-    
-      };}
-
-      export default FavesContainer;
+export default SessionsContainer;

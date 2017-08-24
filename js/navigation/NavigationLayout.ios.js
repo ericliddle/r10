@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-// import from ex-nav
 import {
   StackNavigation,
   TabNavigation,
@@ -41,8 +40,20 @@ class NavigationLayout extends Component {
       <TabNavigation
         id="R10"
         navigatorUID="R10"
-        initialTab='about'
+        initialTab='schedule'
         tabBarColor="black">
+        <TabItem
+          id="schedule"
+          title="Schedule"
+          renderIcon={(isSelected) => this.renderIcon("ios-calendar", isSelected)}
+          renderTitle={this.renderTitle}>
+          <StackNavigation
+            defaultRouteConfig={defaultRouteConfig}
+            NavigatorUID="schedule"
+            id="schedule"
+            initialRoute={Router.getRoute('schedule')}
+          />
+        </TabItem>
         <TabItem
           id="about"
           title="About"
@@ -53,6 +64,33 @@ class NavigationLayout extends Component {
             NavigatorUID="about"
             id="about"
             initialRoute={Router.getRoute('about')}
+          />
+        </TabItem>
+        {/* 
+        <TabItem
+          id="maps"
+          title="Maps"
+          renderIcon={(isSelected) => this.renderIcon("ios-information-circle", isSelected)}
+          renderTitle={this.renderTitle}>
+          <StackNavigation
+            defaultRouteConfig={defaultRouteConfig}
+            NavigatorUID="maps"
+            id="maps"
+            initialRoute={Router.getRoute('maps')}
+          />
+        </TabItem> */}
+
+
+        <TabItem
+          id="faves"
+          title="Faves"
+          renderIcon={(isSelected) => this.renderIcon("ios-heart", isSelected)}
+          renderTitle={this.renderTitle}>
+          <StackNavigation
+            defaultRouteConfig={defaultRouteConfig}
+            NavigatorUID="faves"
+            id="faves"
+            initialRoute={Router.getRoute('faves')}
           />
         </TabItem>
       </TabNavigation>
@@ -71,7 +109,7 @@ class NavigationLayout extends Component {
       fontFamily: typography.fontMain,
       fontSize: 10
     }
-    return (<Text style={title}>{title}</Text>)
+    return (<Text style={titles}>{title}</Text>)
     //return text component
     //Set style: colors(isSelected, etc)
   }

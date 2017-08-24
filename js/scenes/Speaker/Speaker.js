@@ -10,14 +10,15 @@ import {
 
 import { styles } from './styles'
 
-const Maps = () => (
+const Speaker = () => (
   <View >
-    <Text>Maps page</Text>
+    <Text>Speaker page</Text>
   </View >
-)
+);
 
-Maps.PropTypes = {
+
+Speaker.PropTypes = {
   
   };
   
-  export default Maps;
+  export default Speaker;

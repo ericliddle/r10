@@ -1,3 +1,5 @@
+import { Platform, StyleSheet } from 'react-native';
+
 /**
  Global Styles
  */

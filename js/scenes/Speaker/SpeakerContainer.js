@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
-import Faves from './Faves';
+import Speaker from './Speaker';
 
-class FavesContainer extends Component {
+class SpeakerContainer extends Component {
 
   constructor() {
     super();
@@ -15,16 +15,12 @@ class FavesContainer extends Component {
 
   static route = {
     navigationBar: {
-      title: 'Faves',
+      title: 'Speaker',
     }
   }
-
- render() {
-   return <Faves />
- }
 
   static propTypes = {
     
       };}
 
-      export default FavesContainer;
+      export default SpeakerContainer;
