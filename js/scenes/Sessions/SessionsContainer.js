@@ -1,17 +1,22 @@
 import React, { Component } from 'react';
 // import PropTypes from 'prop-types';
-// import { ActivityIndicator } from 'react-native';
+import { ActivityIndicator } from 'react-native';
 
-  import Sessions from './Sessions';
+import Sessions from './Sessions';
+
+import { getSession } from '../../redux/modules/session';
+
 
 class SessionsContainer extends Component {
 
-  constructor() {
-    super();
-    this.state = {
-      data: [],
-      isLoading: true,
-    };
+  componentDidMount() {
+    this.props.dispatch(getSession());
+  }
+
+  static route = {
+    navigationBar: {
+      title: 'Session',
+    }
   }
 
   static route = {

@@ -5,6 +5,8 @@ import { Provider } from 'react-redux';
 import {
   StyleSheet,
   StatusBar,
+  LayoutAnimation,
+  TouchableOpacity,
   // Text,
   // View
 } from 'react-native';
@@ -34,7 +36,7 @@ export default class R10 extends Component {
           <StackNavigation
             navigatorUID="root"
             id="root"
-            initialRoute={Router.getRoute('navigation')}
+            initialRoute={Router.getRoute('about')}
             defaultRouteConfig={{
               styles: { ...NavigationStyles.SlideVertical },
             }}

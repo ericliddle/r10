@@ -19,17 +19,10 @@ import { goToSession } from '../../lib/navigationHelpers'
 
 import { styles } from './styles'
 
-//TODO: this works in place of line 28
-// <TouchableOpacity onPress={() => console.log("fml")}>
-
-
 const Schedule = ({ data }) => (
   <View>
     <SectionList
-      keyExtractor={(item) => (data.session_id)}
-      renderSectionHeader={(item) => (
-        <Text style={styles.fontHeader}>{Moment.unix(item.section.title).format('h:mm A')}</Text>
-      )}
+      keyExtractor={(item, index) => (data.session_id)}
       renderItem={({ item }) => (
         <TouchableOpacity onPress={() => goToSession('schedule', { item })}>
           <View>
@@ -40,6 +33,9 @@ const Schedule = ({ data }) => (
         </TouchableOpacity>
       )}
       sections={data}
+      renderSectionHeader={(item) => (
+        <Text style={styles.fontHeader}>{Moment.unix(item.section.title).format('h:mm A')}</Text>
+      )}
     />
   </View>
 
