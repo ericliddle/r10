@@ -6,27 +6,27 @@ const LOAD_SESSION = 'LOAD_SESSION';
 
 // constants
 const initialState = {
-  data: [],
+  data: {},
   loading: true,
 }
 
 // action creator
-export function loadSession(session) {
+export function loadSession(data) {
   return {
     type: LOAD_SESSION,
-    payload: session
+    payload: data
   }
 }
 
 // add to store
 export function getSession(id) {
-  console.log('id', id)
   return function (dispatch) {
-    fetch('https://r10app-95fea.firebaseio.com/sessions.json')
+    let endpoint = `https://r10app-95fea.firebaseio.com/speakers.json?orderBy="speaker_id"&equalTo="${id}"`
+    fetch(endpoint)
       .then(response => response.json())
       .then(data => {
         const newData = formatSessionData(data)
-        dispatch(loadScheduleData(newData));
+        dispatch(loadSession(newData));
       })
       .catch(error => console.log(`Error fetching JSON: ${error}`));
   }

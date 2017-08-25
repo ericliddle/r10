@@ -36,7 +36,7 @@ export default class R10 extends Component {
           <StackNavigation
             navigatorUID="root"
             id="root"
-            initialRoute={Router.getRoute('about')}
+            initialRoute={Router.getRoute('schedule')}
             defaultRouteConfig={{
               styles: { ...NavigationStyles.SlideVertical },
             }}

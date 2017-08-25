@@ -4,6 +4,12 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { ActivityIndicator } from 'react-native';
 
+import {
+  createRouter,
+  NavigationProvider,
+  StackNavigation,
+} from '@expo/ex-navigation';
+
 import Schedule from './Schedule';
 
 import { getScheduleData } from '../../redux/modules/schedule';
@@ -13,7 +19,7 @@ class ScheduleContainer extends Component {
   componentDidMount() {
     this.props.dispatch(getScheduleData());
   }
-
+  
   static route = {
     navigationBar: {
       title: 'Schedule',

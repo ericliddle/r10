@@ -4,12 +4,13 @@ import {
   Text,
   View
 } from 'react-native';
+import { goToSpeaker } from '../../lib/navigationHelpers';
 
 // import { styles } from './styles'
 
-const Sessions = () => (
+const Sessions = ({data}) => (
   <View >
-    <Text>Sessions Scene</Text>
+    <Text>{data.location}</Text>
   </View >
 )
 

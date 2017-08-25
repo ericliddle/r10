@@ -49,7 +49,7 @@ class AboutAnimate extends Component {
     return (
       <View>
         <TouchableOpacity onPress={this.onPress}>
-          <View style={}>
+          <View>
             <Animated.Text style={animatedStyle}>
               <Text>{this.state.display ? '-' : '+'}</Text>
             </Animated.Text>
