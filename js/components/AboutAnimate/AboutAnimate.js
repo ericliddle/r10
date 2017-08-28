@@ -7,6 +7,8 @@ import {
   Animated
 } from 'react-native';
 
+
+
 class AboutAnimate extends Component {
 
   constructor() {

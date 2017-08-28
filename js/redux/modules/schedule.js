@@ -23,8 +23,8 @@ export function getScheduleData() {
   return function (dispatch) {
     fetch('https://r10app-95fea.firebaseio.com/sessions.json')
       .then(response => response.json())
-      .then(poop2 => {
-        const newData = formatSessionData(poop2)
+      .then(data => {
+        const newData = formatSessionData(data)
         dispatch(loadSchedule(newData));
       })
       .catch(error => console.log(`Error fetching JSON: ${error}`));

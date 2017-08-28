@@ -23,8 +23,8 @@ class SessionsContainer extends Component {
 
   render() {
     return <Sessions
-      scheduleData={this.props.scheduleData}
-      speakerData={this.props.sessionData}
+      speakerData={this.props.speakerData}
+      sessionData={this.props.sessionData}
 
     />
   }
@@ -32,9 +32,8 @@ class SessionsContainer extends Component {
 
 function mapStateToProps(state) {
   return {
-    sessionData: state.session.sessionData,
+    speakerData: state.session.sessionData,
   }
 }
 
 export default connect(mapStateToProps)(SessionsContainer);
-// export default (SessionsContainer);

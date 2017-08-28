@@ -40,7 +40,7 @@ export default class R10 extends Component {
             //TODO:
             // Change back to initialRoute={Router.getRoute('navigation')}
             // when done with individual pages
-            initialRoute={Router.getRoute('navigation')}
+            initialRoute={Router.getRoute('about')}
           />
         </NavigationProvider>
       </Provider>

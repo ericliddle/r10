@@ -8,7 +8,6 @@ import Speaker from '../scenes/Speaker';
 import NavigationLayout from './NavigationLayout';
 
 const Router = createRouter(() => ({
-  // home: () => HomeScreen,
   schedule: () => Schedule,
   sessions: () => Sessions,
   about: () => About,

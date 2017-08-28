@@ -9,14 +9,11 @@ import {
 } from 'react-native';
 
 import Moment from 'moment';
-import Icon from 'react-native-vector-icons/Ionicons';
-
-
-// import { goToSession } from '../../lib/navigationHelpers'
+// import Icon from 'react-native-vector-icons/Ionicons';
 
 // import { styles } from './styles'
 
-const Schedule = ({ balls, singleSession }) => {
+const Schedule = ({ data, singleSession }) => {
   return (
     <View>
       <SectionList
@@ -33,7 +30,7 @@ const Schedule = ({ balls, singleSession }) => {
         renderSectionHeader={(item) => (
           <Text>{Moment.unix(item.section.title).format('h:mm A')}</Text>
         )}
-        sections={balls}
+        sections={data}
       />
     </View>
   )

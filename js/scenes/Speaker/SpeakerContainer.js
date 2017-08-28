@@ -5,22 +5,23 @@ import Speaker from './Speaker';
 
 class SpeakerContainer extends Component {
 
-  constructor() {
-    super();
-    this.state = {
-      data: [],
-      isLoading: true,
-    };
-  }
-
   static route = {
     navigationBar: {
-      title: 'Speaker',
+      title: 'About the Speaker',
     }
   }
 
   static propTypes = {
-    
-      };}
 
-      export default SpeakerContainer;
+  };
+
+
+  render() {
+    return (
+      <Speaker
+        speakerData={this.props.speakerData} />
+    )
+  }
+}
+
+export default SpeakerContainer;

@@ -39,7 +39,7 @@ class ScheduleContainer extends Component {
     } else {
       return (
         <Schedule
-          balls={this.props.scheduleData}
+          data={this.props.scheduleData}
           singleSession={this.singleSession} />
       );
     }
