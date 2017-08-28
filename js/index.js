@@ -18,6 +18,7 @@ import {
   NavigationStyles
 } from '@expo/ex-navigation';
 
+import LinearGradient from 'react-native-linear-gradient';
 
 import Router from './navigation/routes';
 import Store from './redux/store';
@@ -33,14 +34,17 @@ export default class R10 extends Component {
       <Provider store={Store}>
         <NavigationProvider
           context={navigationContext}>
-          <StatusBar barStyle="light-content" />
+          <StatusBar
+            barStyle="light-content"
+           />
+          />
           <StackNavigation
             navigatorUID="root"
             id="root"
             //TODO:
             // Change back to initialRoute={Router.getRoute('navigation')}
             // when done with individual pages
-            initialRoute={Router.getRoute('about')}
+            initialRoute={Router.getRoute('navigation')}
           />
         </NavigationProvider>
       </Provider>

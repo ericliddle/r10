@@ -15,8 +15,8 @@ import { styles } from './styles';
 const About = ({ data }) => (
   <ScrollView>
     <View style={styles.container}>
-      <View style={styles.r10Logo}>
-        <Image
+      <View style={styles.r10LogoContainer}>
+        <Image style={styles.r10LogoImage}
           source={require('../../assets/images/r10_logo.png')}
         />
       </View>

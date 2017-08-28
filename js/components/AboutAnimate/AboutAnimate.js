@@ -7,7 +7,7 @@ import {
   Animated
 } from 'react-native';
 
-
+import { styles } from './styles';
 
 class AboutAnimate extends Component {
 
@@ -21,7 +21,6 @@ class AboutAnimate extends Component {
   }
 
   onPress = () => {
-    //This is calling spinItem
     this.spinItem();
     LayoutAnimation.linear();
     this.setState({ display: !this.state.display })
@@ -31,7 +30,7 @@ class AboutAnimate extends Component {
     this.state.spin.setValue(0)
     Animated.timing(
       this.state.spin,
-      { toValue: 1, duration: 300 }
+      { toValue: 1, duration: 200 }
     ).start();
   }
 
@@ -44,21 +43,20 @@ class AboutAnimate extends Component {
     })
 
     let animatedStyle = {
+      width: 10,
       transform: [
-        {rotate: spin}
+        { rotate: spin }
       ]
     }
     return (
       <View>
-        <TouchableOpacity onPress={this.onPress}>
-          <View>
-            <Animated.Text style={animatedStyle}>
-              <Text>{this.state.display ? '-' : '+'}</Text>
-            </Animated.Text>
-            <Text>{this.props.data.title}</Text>
-          </View>
+        <TouchableOpacity style={styles.conductItems} onPress={this.onPress}>
+          <Animated.Text style={animatedStyle}>
+            <Text style={styles.plusSign}>{this.state.display ? '-' : '+'}</Text>
+          </Animated.Text>
+          <Text style={styles.conductTitle}>{this.props.data.title}</Text>
         </TouchableOpacity>
-        {this.state.display && <Text>{this.props.data.description}</Text>}
+          {this.state.display && <Text style={styles.conductList}>{this.props.data.description}</Text>}
       </View>
     );
   }

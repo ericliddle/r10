@@ -1,15 +1,21 @@
 import { StyleSheet } from 'react-native';
+import {colors, typography } from '../../config/styles';
 
 export const styles = StyleSheet.create({
   container: {
     flex: 1,
-    marginLeft: 8,
-    marginRight: 8
+    marginLeft: 16,
+    marginRight: 16
   },
-  r10Logo: {
+  r10LogoContainer: {
+    marginBottom: 20,
+    marginTop: 20,
+    alignItems: 'center',
+    borderBottomWidth: 1.5,
+    borderBottomColor: colors.lightGrey
+  },
+  r10LogoImage: {
     marginBottom: 16,
-    marginTop: 16,
-    alignItems: 'center'
   },
   border: {
     flex: 1,
@@ -18,9 +24,9 @@ export const styles = StyleSheet.create({
   },
   sectionHeader: {
     fontWeight: 'bold',
-    fontSize: 20
+    fontSize: 20,
+    marginBottom: 20,
+    marginTop: 20,
   },
-  conductItems: {
-    flex: 1,
-  }
+
 });
