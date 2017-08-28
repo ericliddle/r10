@@ -28,11 +28,11 @@ const defaultRouteConfig = {
 };
 
 class NavigationLayout extends Component {
-  static route = {
+  // static route = {
     // navigationBar: {
     //   visible: false
     // }
-  }
+  // }
   //Render the tab bar with nested tab items
   //and stack navs.
   render() {
@@ -48,11 +48,10 @@ class NavigationLayout extends Component {
           renderIcon={(isSelected) => this.renderIcon("ios-calendar", isSelected)}
           renderTitle={this.renderTitle}>
           <StackNavigation
-            defaultRouteConfig={defaultRouteConfig}
-            //navigtator is lowercase
-            navigatorUID="schedule"
             id="schedule"
+            navigatorUID="schedule"
             initialRoute={Router.getRoute('schedule')}
+            defaultRouteConfig={defaultRouteConfig}
           />
         </TabItem>
         <TabItem
@@ -61,10 +60,10 @@ class NavigationLayout extends Component {
           renderIcon={(isSelected) => this.renderIcon("ios-information-circle", isSelected)}
           renderTitle={this.renderTitle}>
           <StackNavigation
-            defaultRouteConfig={defaultRouteConfig}
-            navigatorUID="about"
             id="about"
+            navigatorUID="about"
             initialRoute={Router.getRoute('about')}
+            defaultRouteConfig={defaultRouteConfig}
           />
         </TabItem>
         {/* 

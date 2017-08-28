@@ -1,19 +1,19 @@
 import { formatSessionData } from '../../lib/dataFormatHelper';
 
 // write actions
-const LOAD_SCHEDULE_DATA = 'LOAD_SCHEDULE_DATA';
+const SCHEDULE_DATA = "SCHEDULE_DATA";
 
 
 // constants
 const initialState = {
-  data: [],
+  scheduleData: [],
   loading: true,
 }
 
 // action creator
-export function loadScheduleData(schedule) {
+export function loadSchedule(schedule) {
   return {
-    type: LOAD_SCHEDULE_DATA,
+    type: SCHEDULE_DATA,
     payload: schedule
   }
 }
@@ -23,9 +23,9 @@ export function getScheduleData() {
   return function (dispatch) {
     fetch('https://r10app-95fea.firebaseio.com/sessions.json')
       .then(response => response.json())
-      .then(data => {
-        const newData = formatSessionData(data)
-        dispatch(loadScheduleData(newData));
+      .then(poop2 => {
+        const newData = formatSessionData(poop2)
+        dispatch(loadSchedule(newData));
       })
       .catch(error => console.log(`Error fetching JSON: ${error}`));
   }
@@ -34,10 +34,10 @@ export function getScheduleData() {
 // reducer
 export function scheduleReducer(state = initialState, action) {
   switch (action.type) {
-    case LOAD_SCHEDULE_DATA:
+    case SCHEDULE_DATA:
       return {
         ...state,
-        data: action.payload,
+        scheduleData: action.payload,
         loading: false,
       };
     default:

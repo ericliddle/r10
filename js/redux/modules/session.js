@@ -1,4 +1,4 @@
-import { formatSessionData } from '../../lib/dataFormatHelper';
+import { formatDataObject } from '../../lib/dataFormatHelper';
 
 // write actions
 const LOAD_SESSION = 'LOAD_SESSION';
@@ -6,28 +6,28 @@ const LOAD_SESSION = 'LOAD_SESSION';
 
 // constants
 const initialState = {
-  data: {},
+  sessionData: {},
   loading: true,
 }
 
 // action creator
-export function loadSession(data) {
+export function loadSession(sessionData) {
   return {
     type: LOAD_SESSION,
-    payload: data
+    payload: sessionData
   }
 }
 
 // add to store
-export function getSession(id) {
+export function getSessionData(sessionId) {
   return function (dispatch) {
-    let endpoint = `https://r10app-95fea.firebaseio.com/speakers.json?orderBy="speaker_id"&equalTo="${id}"`
+    let endpoint = `https://r10app-95fea.firebaseio.com/speakers.json?orderBy="speaker_id"&equalTo="${sessionId}"`
     fetch(endpoint)
       .then(response => response.json())
       .then(data => {
-        const newData = formatSessionData(data)
-        dispatch(loadSession(newData));
-      })
+        const Data = formatDataObject(data)
+        dispatch(loadSession(Data));
+        })
       .catch(error => console.log(`Error fetching JSON: ${error}`));
   }
 }
@@ -38,7 +38,7 @@ export function sessionReducer(state = initialState, action) {
     case LOAD_SESSION:
       return {
         ...state,
-        data: action.payload,
+        sessionData: action.payload,
         loading: false,
       };
     default:

@@ -1,18 +1,18 @@
 import React, { Component } from 'react';
 // import PropTypes from 'prop-types';
-import { creatRouter } from '@expo/ex-navigation';
-import { ActivityIndicator } from 'react-native';
+import { createRouter, NavigationProvider, StackNavigation } from '@expo/ex-navigation';
+// import { ActivityIndicator } from 'react-native';
 import { connect } from 'react-redux';
 
 import Sessions from './Sessions';
 
-import { getSession } from '../../redux/modules/session';
+import { getSessionData } from '../../redux/modules/session';
 
 
 class SessionsContainer extends Component {
 
   componentDidMount() {
-    this.props.dispatch(getSession(this.props.getSession.speaker));
+    this.props.dispatch(getSessionData(this.props.sessionData.speaker));
   }
 
   static route = {
@@ -23,16 +23,18 @@ class SessionsContainer extends Component {
 
   render() {
     return <Sessions
+      scheduleData={this.props.scheduleData}
+      speakerData={this.props.sessionData}
 
-      data={this.props.data}
     />
   }
 }
 
 function mapStateToProps(state) {
   return {
-    data: state.schedule.sessionData,
+    sessionData: state.session.sessionData,
   }
 }
 
-export default SessionsContainer;
+export default connect(mapStateToProps)(SessionsContainer);
+// export default (SessionsContainer);

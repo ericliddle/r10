@@ -15,7 +15,7 @@ import {
   NavigationProvider,
   StackNavigation,
   NavigationContext,
-  NavigationStyles  
+  NavigationStyles
 } from '@expo/ex-navigation';
 
 
@@ -31,21 +31,26 @@ export default class R10 extends Component {
   render() {
     return (
       <Provider store={Store}>
-        <NavigationProvider context={navigationContext}>
-          <StatusBar barStyle={"light-content"} />
+        <NavigationProvider
+          context={navigationContext}>
+          <StatusBar barStyle="light-content" />
           <StackNavigation
             navigatorUID="root"
             id="root"
-            initialRoute={Router.getRoute('schedule')}
-            defaultRouteConfig={{
-              styles: { ...NavigationStyles.SlideVertical },
-            }}
+            //TODO:
+            // Change back to initialRoute={Router.getRoute('navigation')}
+            // when done with individual pages
+            initialRoute={Router.getRoute('navigation')}
           />
         </NavigationProvider>
       </Provider>
     );
   }
 }
+
+{/* defaultRouteConfig={{
+  styles: { ...NavigationStyles.SlideVertical },
+}} */}
 
 const styles = StyleSheet.create({
   container: {

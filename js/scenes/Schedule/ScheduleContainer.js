@@ -13,13 +13,18 @@ import {
 import Schedule from './Schedule';
 
 import { getScheduleData } from '../../redux/modules/schedule';
+import { goToSession } from '../../lib/navigationHelpers'
 
 class ScheduleContainer extends Component {
 
   componentDidMount() {
     this.props.dispatch(getScheduleData());
   }
-  
+
+  singleSession(item) {
+    goToSession('schedule', item);
+  }
+
   static route = {
     navigationBar: {
       title: 'Schedule',
@@ -33,7 +38,9 @@ class ScheduleContainer extends Component {
       )
     } else {
       return (
-        <Schedule data={this.props.data} />
+        <Schedule
+          balls={this.props.scheduleData}
+          singleSession={this.singleSession} />
       );
     }
   }
@@ -42,7 +49,7 @@ class ScheduleContainer extends Component {
 function mapStateToProps(state) {
   return {
     isLoading: state.schedule.loading,
-    data: state.schedule.data,
+    scheduleData: state.schedule.scheduleData,
   }
 }
 
