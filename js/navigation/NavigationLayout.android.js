@@ -18,19 +18,7 @@ import { colors, typography } from '../config/styles';
 
 import LinearGradient from 'react-native-linear-gradient';
 
-
-// const defaultRouteConfig = {
-//   navigationBar: {
-//     tintColor: 'white',
-//     titleStyle: {
-//       //change front with property in here
-//     },
-//     // renderBackground: () => (
-//     //   background could be an image
-//     // )
-//   }
-// };
-
+//TODO: Touch ups on styling for linear gradient
 const defaultRouteConfig = {
   navigationBar: {
     tintColor: 'white',
