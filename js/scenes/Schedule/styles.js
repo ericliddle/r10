@@ -2,40 +2,6 @@ import { StyleSheet, Platform } from 'react-native';
 import { typography, colors } from '../../config/styles';
 
 export const styles = StyleSheet.create({
-  scheduleContainer: {
-    flex: 1,
-    flexWrap: 'wrap',
-    flexDirection: 'row'
-  },
-
-  fontStyle: {
-    ...Platform.select({
-      ios: {
-        fontFamily: 'Montserrat',
-        color: 'blue'
-      },
-      android: {
-        fontFamily: 'times',
-        color: 'purple'
-      }
-    })
-  },
-
-  fontHeader: {
-    ...Platform.select({
-      ios: {
-        fontSize: 30
-      },
-      android: {
-        fontSize: 30
-      }
-    })
-  },
-
-  colors: {
-    color: 'red',
-  },
-
   schedHeader: {
     backgroundColor: colors.lightGrey,
     paddingTop: 5,
@@ -43,13 +9,24 @@ export const styles = StyleSheet.create({
     paddingLeft: 10,
     paddingRight: 10
   },
-
+  scheduleContainer: {
+    flex: 1,
+    flexWrap: 'wrap',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+    flexDirection: 'row'
+  },
   sessionTitle: {
     color: 'black',
     paddingTop: 8,
     paddingBottom: 4,
     paddingLeft: 10,
     paddingRight: 10
+  },
+  schedHeart: {
+    fontSize: 18,
+    color: colors.red,
+    marginRight: 10
   },
   sessionLocation: {
     color: colors.mediumGrey,

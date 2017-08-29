@@ -12,10 +12,11 @@ import Moment from 'moment';
 import Icon from 'react-native-vector-icons/Ionicons';
 
 import { styles } from './styles'
+import { colors, typography } from '../../config/styles'
 
 const Schedule = ({ data, singleSession }) => {
   return (
-    <View>
+    <View style={styles.container}>
       <SectionList
         renderSectionHeader={(item) => (
           <Text style={styles.schedHeader}>{Moment.unix(item.section.title).format('h:mm A')}</Text>
@@ -27,9 +28,9 @@ const Schedule = ({ data, singleSession }) => {
 
             <View style={styles.scheduleContainer}>
               <Text style={styles.sessionTitle}>{item.title}</Text>
-              <Text style={styles.sessionLocation}>{item.location} </Text>
-              <Icon name={Platform.OS === 'ios' ? 'ios-heart' : 'md-heart'} size={20} color='red' />
+              <Icon name={Platform.OS === 'ios' ? 'ios-heart' : 'md-heart'} style={styles.schedHeart} />
             </View>
+              <Text style={styles.sessionLocation}>{item.location} </Text>
           </TouchableOpacity>
         )}
         sections={data}

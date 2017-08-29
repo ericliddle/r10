@@ -27,7 +27,7 @@ const defaultRouteConfig = {
           start={{ x: 0.2, y: 1.0 }}
           end={{ x: 1, y: 0.2 }}
           colors={[colors.red, colors.purple]}
-          style={StyleSheet.absoluteFill}
+          style={StyleSheet.absoluteFillObject}
         />
       )
     }
