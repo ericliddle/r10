@@ -33,9 +33,9 @@ export default class R10 extends Component {
       <Provider store={Store}>
         <NavigationProvider
           context={navigationContext}>
-          <StatusBar 
-          barStyle="light-content"
-           />
+          <StatusBar
+            barStyle="light-content"
+          />
           <StackNavigation
             navigatorUID="root"
             id="root"
@@ -43,6 +43,9 @@ export default class R10 extends Component {
             // Change back to initialRoute={Router.getRoute('navigation')}
             // when done with individual pages
             initialRoute={Router.getRoute('navigation')}
+            defaultRouteConfig={{
+              styles: { ...NavigationStyles.SlideVertical },
+            }}
           />
         </NavigationProvider>
       </Provider>
@@ -50,9 +53,6 @@ export default class R10 extends Component {
   }
 }
 
-{/* defaultRouteConfig={{
-  styles: { ...NavigationStyles.SlideVertical },
-}} */}
 
 const styles = StyleSheet.create({
   container: {

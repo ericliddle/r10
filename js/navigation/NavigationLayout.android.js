@@ -5,11 +5,10 @@ import {
   DrawerNavigationItem,
 } from '@expo/ex-navigation';
 
-import { StyleSheet } from 'react-native'
-
 import {
   Text,
   View,
+  StyleSheet
 } from 'react-native';
 
 //use get routenav
@@ -17,16 +16,36 @@ import Router from './routes';
 import Icon from 'react-native-vector-icons/Ionicons';
 import { colors, typography } from '../config/styles';
 
+import LinearGradient from 'react-native-linear-gradient';
+
+
+// const defaultRouteConfig = {
+//   navigationBar: {
+//     tintColor: 'white',
+//     titleStyle: {
+//       //change front with property in here
+//     },
+//     // renderBackground: () => (
+//     //   background could be an image
+//     // )
+//   }
+// };
 
 const defaultRouteConfig = {
   navigationBar: {
     tintColor: 'white',
-    titleStyle: {
-      //change front with property in here
-    },
-    // renderBackground: () => (
-    //   background could be an image
-    // )
+    // titleStyle: {
+    // },
+    renderBackground: () => {
+      return (
+        <LinearGradient
+          start={{ x: 0.2, y: 1.0 }}
+          end={{ x: 1, y: 0.2 }}
+          colors={[colors.red, colors.purple]}
+          style={StyleSheet.absoluteFillObject}
+        />
+      )
+    }
   }
 };
 
@@ -137,7 +156,7 @@ const styles = StyleSheet.create({
   },
 
   selectedTitleText: {
-    color: 'whitek'
+    color: 'white'
   }
 });
 
