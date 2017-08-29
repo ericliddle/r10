@@ -7,34 +7,34 @@ import {
 
 import {
   Text,
+  StyleSheet,
 } from 'react-native';
 
 //use get routenav
 import Router from './routes';
 import Icon from 'react-native-vector-icons/Ionicons';
 import { colors, typography } from '../config/styles';
-
+import LinearGradient from 'react-native-linear-gradient';
 
 const defaultRouteConfig = {
   navigationBar: {
     tintColor: 'white',
-    titleStyle: {
-      //change front with property in here
-    },
-    // renderBackground: () => (
-    //   background could be an image
-    // )
+    // titleStyle: {
+    // },
+    renderBackground: () => {
+      return (
+        <LinearGradient
+          start={{ x: 0.2, y: 1.0 }}
+          end={{ x: 1, y: 0.2 }}
+          colors={[colors.red, colors.purple]}
+          style={StyleSheet.absoluteFill}
+        />
+      )
+    }
   }
 };
 
 class NavigationLayout extends Component {
-  // static route = {
-    // navigationBar: {
-    //   visible: false
-    // }
-  // }
-  //Render the tab bar with nested tab items
-  //and stack navs.
   render() {
     return (
       <TabNavigation

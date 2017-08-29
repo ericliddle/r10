@@ -129,7 +129,7 @@ const styles = StyleSheet.create({
   },
 
   selectedItemStyle: {
-    backgroundColor: 'blue'
+    backgroundColor: 'white'
   },
 
   titleText: {
@@ -137,7 +137,7 @@ const styles = StyleSheet.create({
   },
 
   selectedTitleText: {
-    color: 'black'
+    color: 'whitek'
   }
 });
 
