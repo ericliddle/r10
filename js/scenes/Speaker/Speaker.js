@@ -13,13 +13,13 @@ import { styles } from './styles'
 
 const Speaker = (speakerData) => (
   <ScrollView>
-    <View >
+    <View style={styles.container}>
       {/* <Text>{JSON.stringify(speakerData)}</Text> */}
       <Image
-    style={{ width: 100, height: 100, borderRadius: 50}}
+    style={styles.speakerImage}
     source={{uri: speakerData.speakerData.image}}
   />
-      <Text>{speakerData.speakerData.name}</Text>
+      <Text style={styles.speakerName}>{speakerData.speakerData.name}</Text>
       <Text>{speakerData.speakerData.bio}</Text>
     </View >
   </ScrollView>
