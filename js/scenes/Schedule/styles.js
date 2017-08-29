@@ -1,6 +1,13 @@
-import {StyleSheet, Platform} from 'react-native';
+import { StyleSheet, Platform } from 'react-native';
+import { typography, colors } from '../../config/styles';
 
 export const styles = StyleSheet.create({
+  scheduleContainer: {
+    flex: 1,
+    flexWrap: 'wrap',
+    flexDirection: 'row'
+  },
+
   fontStyle: {
     ...Platform.select({
       ios: {
@@ -13,6 +20,7 @@ export const styles = StyleSheet.create({
       }
     })
   },
+
   fontHeader: {
     ...Platform.select({
       ios: {
@@ -23,7 +31,32 @@ export const styles = StyleSheet.create({
       }
     })
   },
+
   colors: {
     color: 'red',
   },
+
+  schedHeader: {
+    backgroundColor: colors.lightGrey,
+    paddingTop: 5,
+    paddingBottom: 5,
+    paddingLeft: 10,
+    paddingRight: 10
+  },
+
+  sessionTitle: {
+    color: 'black',
+    paddingTop: 8,
+    paddingBottom: 4,
+    paddingLeft: 10,
+    paddingRight: 10
+  },
+  sessionLocation: {
+    color: colors.mediumGrey,
+    fontWeight: 'bold',
+    paddingTop: 6,
+    paddingBottom: 8,
+    paddingLeft: 10,
+    paddingRight: 10
+  }
 })

@@ -9,26 +9,28 @@ import {
 } from 'react-native';
 
 import Moment from 'moment';
-// import Icon from 'react-native-vector-icons/Ionicons';
+import Icon from 'react-native-vector-icons/Ionicons';
 
-// import { styles } from './styles'
+import { styles } from './styles'
 
 const Schedule = ({ data, singleSession }) => {
   return (
     <View>
       <SectionList
+        renderSectionHeader={(item) => (
+          <Text style={styles.schedHeader}>{Moment.unix(item.section.title).format('h:mm A')}</Text>
+        )}
+
         keyExtractor={(item) => (item.session_id)}
         renderItem={({ item }) => (
           <TouchableOpacity onPress={() => singleSession(item)}>
-            <View>
-              <Text>{item.title}</Text>
-              <Text>{item.location} </Text>
-              {/* <Icon name={Platform.OS === 'ios' ? 'ios-heart' : 'md-heart'} size={20} color='red' /> */}
+
+            <View style={styles.scheduleContainer}>
+              <Text style={styles.sessionTitle}>{item.title}</Text>
+              <Text style={styles.sessionLocation}>{item.location} </Text>
+              <Icon name={Platform.OS === 'ios' ? 'ios-heart' : 'md-heart'} size={20} color='red' />
             </View>
           </TouchableOpacity>
-        )}
-        renderSectionHeader={(item) => (
-          <Text>{Moment.unix(item.section.title).format('h:mm A')}</Text>
         )}
         sections={data}
       />
