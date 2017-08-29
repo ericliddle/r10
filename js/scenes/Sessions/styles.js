@@ -2,61 +2,64 @@ import { StyleSheet, Platform } from 'react-native';
 import { typography, colors } from '../../config/styles';
 
 export const styles = StyleSheet.create({
-  scheduleContainer: {
+  container: {
     flex: 1,
-    flexWrap: 'wrap',
-    flexDirection: 'row'
+    marginLeft: 16,
+    marginRight: 16
   },
-
-  fontStyle: {
-    ...Platform.select({
-      ios: {
-        fontFamily: 'Montserrat',
-        color: 'blue'
-      },
-      android: {
-        fontFamily: 'times',
-        color: 'purple'
-      }
-    })
-  },
-
-  fontHeader: {
-    ...Platform.select({
-      ios: {
-        fontSize: 30
-      },
-      android: {
-        fontSize: 30
-      }
-    })
-  },
-
-  colors: {
-    color: 'red',
-  },
-
-  schedHeader: {
-    backgroundColor: colors.lightGrey,
+  sessionHeader: {
+    flex: 1,
+    flexDirection: 'row',
+    justifyContent: 'space-between',
     paddingTop: 5,
     paddingBottom: 5,
-    paddingLeft: 10,
-    paddingRight: 10
-  },
-
-  sessionTitle: {
-    color: 'black',
-    paddingTop: 8,
-    paddingBottom: 4,
-    paddingLeft: 10,
-    paddingRight: 10
   },
   sessionLocation: {
     color: colors.mediumGrey,
     fontWeight: 'bold',
     paddingTop: 6,
     paddingBottom: 8,
-    paddingLeft: 10,
-    paddingRight: 10
+  },
+  heartIcon: {
+    color: colors.red,
+    fontSize: 18,
+  },
+  sessionTitle: {
+    color: 'black',
+    fontSize: 24,
+    fontWeight: 'bold',
+    paddingTop: 8,
+    paddingBottom: 4,
+  },
+  timeSlot: {
+    color: colors.red,
+    paddingTop: 8,
+    paddingBottom: 4,
+  },
+  sessionInfo: {
+    fontSize: 18,
+    paddingTop: 10,
+    paddingBottom: 25,
+  },
+  speakerContainer: {
+    flex: 1,
+    flexDirection: 'row',
+    alignItems: 'center',
+    borderBottomWidth: 1.5,
+    borderBottomColor: colors.lightGrey,
+    paddingBottom: 16,
+  },
+  presenter: {
+    color: colors.mediumGrey,
+    fontWeight: 'bold',
+    paddingTop: 10,
+    paddingBottom: 10,
+  },
+  speakerImage: {
+    width: 50,
+    height: 50,
+    borderRadius: 25,
+    marginRight: 15,
   }
+
 })

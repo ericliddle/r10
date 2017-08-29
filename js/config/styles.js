@@ -11,10 +11,18 @@ export const colors = {
   purple: '#9963ea',
   red: '#cf392a',
 };
+
 //Will have to conditionally set Monstserrat for IOS or Android.
 //ios = Montserrat, Android = Montserrat-regular
 export const typography = {
   baseSize: 16,
-  fontMain: 'Montserrat',
-  fontMainLight: 'Montserrat-Light'
+  fontMainLight: 'Montserrat-Light',
+  ...Platform.select({
+    ios: {
+      fontMain: 'Montserrat',
+    },
+    android: {
+      fontMain: 'Montserrat-Regular',
+    }
+  })
 };
