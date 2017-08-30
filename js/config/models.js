@@ -3,7 +3,7 @@ import Realm from 'realm';
 
 export const createFave = (faveId) => {
   realm.write(() => {
-    realm.create('Fave', { faveId: '1', faved_on: Date.now() });
+    realm.create('Fave', { id: faveId, faved_on: new Date() }, true);
   });
 }
 
@@ -15,10 +15,9 @@ export const deleteFave = (faveId) => {
   });
 }
 
-
 export const queryFaves = () => {
-  let fave = realm.objects('Fave')
-  return fave
+  let query = realm.objects('Fave')
+  return query
 }
 
 const Fave = {
@@ -32,4 +31,4 @@ const Fave = {
 
 const realm = new Realm({ schema: [Fave] });
 
-export default realm;
+// export default realm;

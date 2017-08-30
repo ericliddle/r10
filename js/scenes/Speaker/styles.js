@@ -5,9 +5,13 @@ export const styles = StyleSheet.create({
   container: {
     flex: 1,
     alignItems: 'center',
-    marginLeft: 16,
-    marginRight: 16,
+    marginLeft: 12,
+    marginRight: 12,
     paddingTop: 28,
+    paddingLeft: 16,
+    paddingRight: 16,
+    backgroundColor: 'white',
+    borderRadius: 10,
   },
   speakerImage: {
     width: 100, 
@@ -16,8 +20,13 @@ export const styles = StyleSheet.create({
     marginBottom: 16, 
   },
   speakerName: {
+    fontFamily: typography.fontMain,
     fontSize: 24,
     fontWeight: 'bold',
     marginBottom: 16,
+  },
+  speakerBio: {
+    fontFamily: typography.fontMainLight,
+    fontSize: 14,
   }
 });

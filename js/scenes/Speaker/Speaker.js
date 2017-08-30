@@ -6,22 +6,39 @@ import {
   ScrollView,
   FlatList,
   Image,
-  View
+  Button,
+  View,
+  TouchableOpacity,
+  Platform,
+  Linking
 } from 'react-native';
 
 import { styles } from './styles'
+import Icon from 'react-native-vector-icons/Ionicons';
+
 
 const Speaker = (speakerData) => (
-  <ScrollView>
+  <ScrollView backgroundColor='black'>
+    <View>
+      <TouchableOpacity>
+        <Icon name='ios-close' size={36} color='white' />
+        <Text color='white'>About the Speaker</Text>
+      </TouchableOpacity>
+    </View>
     <View style={styles.container}>
-      {/* <Text>{JSON.stringify(speakerData)}</Text> */}
       <Image
-    style={styles.speakerImage}
-    source={{uri: speakerData.speakerData.image}}
-  />
+        style={styles.speakerImage}
+        source={{ uri: speakerData.speakerData.image }}
+      />
       <Text style={styles.speakerName}>{speakerData.speakerData.name}</Text>
-      <Text>{speakerData.speakerData.bio}</Text>
-    </View >
+      <Text style={styles.speakerBio}>{speakerData.speakerData.bio}</Text>
+
+      <View>
+        <Button title='Read More on Wikipedia'
+          onPress={() => Linking.openURL(speakerData.speakerData.url).catch(err => ('An error occurred', err))}
+        />
+      </View >
+    </View>
   </ScrollView>
 );
 

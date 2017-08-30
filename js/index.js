@@ -7,6 +7,7 @@ import {
   StatusBar,
   LayoutAnimation,
   TouchableOpacity,
+  Icon,
   // Text,
   // View
 } from 'react-native';
@@ -24,7 +25,7 @@ import Store from './redux/store';
 
 const navigationContext = new NavigationContext({
   router: Router,
-  store: Store
+  store: Store,
 })
 
 export default class R10 extends Component {

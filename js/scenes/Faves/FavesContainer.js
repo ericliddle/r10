@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
+import { ActivityIndicator } from 'react-native';
+
 import Faves from './Faves';
 
 class FavesContainer extends Component {
@@ -19,12 +21,19 @@ class FavesContainer extends Component {
     }
   }
 
- render() {
-   return <Faves />
- }
+  render() {
+    if (this.props.isLoading) {
+      return (
+        <ActivityIndicator animating={true} size="small" color="black" />
+      )
+    } else {
+      return <Faves />
+    }
+  }
 
   static propTypes = {
-    
-      };}
 
-      export default FavesContainer;
+  };
+}
+
+export default FavesContainer;

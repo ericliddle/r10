@@ -5,7 +5,6 @@ import {
   Text,
   Image,
   View,
-  Button,
   ScrollView,
   TouchableOpacity
 } from 'react-native';
@@ -15,7 +14,7 @@ import Icon from 'react-native-vector-icons/Ionicons';
 
 import { styles } from './styles';
 
-const Sessions = ({ speakerData, sessionData }) => (
+const Sessions = ({ speakerData, sessionData, createFave, deleteFave }) => (
   <ScrollView>
     <View style={styles.container}>
       <View style={styles.sessionHeader}>
@@ -37,12 +36,11 @@ const Sessions = ({ speakerData, sessionData }) => (
       </TouchableOpacity>
     </View>
     <View>
-      <Button
-        title="Remove from Faves"
-        color="black"
-        accessibilityLabel="Learn more about this purple button"
-      />
-      {/* TODO: Style button */}
+      <TouchableOpacity
+      onPress={() => createFave()}
+      >
+        <Text>Remove from Faves</Text>
+      </TouchableOpacity>
     </View>
   </ScrollView>
 )
