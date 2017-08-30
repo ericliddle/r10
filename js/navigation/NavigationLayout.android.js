@@ -66,19 +66,6 @@ class DrawerNavigationLaytout extends Component {
           />
         </DrawerNavigationItem>
         <DrawerNavigationItem
-          id="about"
-          title="About"
-          selectedStyle={styles.selectedItemStyle}
-          renderIcon={(isSelected) => this.renderIcon("md-information-circle", isSelected)}
-          renderTitle={this.renderTitle}>
-          <StackNavigation
-            id="about"
-            defaultRouteConfig={defaultRouteConfig}
-            navigatorUID="about"
-            initialRoute={Router.getRoute('about')}
-          />
-        </DrawerNavigationItem>
-        <DrawerNavigationItem
           id="faves"
           title="Faves"
           selectedStyle={styles.selectedItemStyle}
@@ -89,6 +76,19 @@ class DrawerNavigationLaytout extends Component {
             defaultRouteConfig={defaultRouteConfig}
             navigatorUID="faves"
             initialRoute={Router.getRoute('faves')}
+          />
+        </DrawerNavigationItem>
+        <DrawerNavigationItem
+          id="about"
+          title="About"
+          selectedStyle={styles.selectedItemStyle}
+          renderIcon={(isSelected) => this.renderIcon("md-information-circle", isSelected)}
+          renderTitle={this.renderTitle}>
+          <StackNavigation
+            id="about"
+            defaultRouteConfig={defaultRouteConfig}
+            navigatorUID="about"
+            initialRoute={Router.getRoute('about')}
           />
         </DrawerNavigationItem>
       </DrawerNavigation>

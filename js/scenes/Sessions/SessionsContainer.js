@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 // import PropTypes from 'prop-types';
-import { createRouter, NavigationProvider, StackNavigation } from '@expo/ex-navigation';
+
 // import { ActivityIndicator } from 'react-native';
 import { connect } from 'react-redux';
 
@@ -11,7 +11,7 @@ import { ActivityIndicator } from 'react-native';
 import { getSessionData } from '../../redux/modules/session';
 
 import {
-  // getFaveData,
+  getFaveData,
   createFaveItem,
   deleteFaveItem
 } from '../../redux/modules/faves';
@@ -47,6 +47,7 @@ class SessionsContainer extends Component {
         speakerData={this.props.speakerData}
         sessionData={this.props.sessionData}
         createFave={() => this.createFave()}
+        deleteFave={() => this.deleteFave()}
       />
     }
   }

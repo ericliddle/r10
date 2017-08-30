@@ -54,18 +54,6 @@ class NavigationLayout extends Component {
             defaultRouteConfig={defaultRouteConfig}
           />
         </TabItem>
-        <TabItem
-          id="about"
-          title="About"
-          renderIcon={(isSelected) => this.renderIcon("ios-information-circle", isSelected)}
-          renderTitle={this.renderTitle}>
-          <StackNavigation
-            id="about"
-            navigatorUID="about"
-            initialRoute={Router.getRoute('about')}
-            defaultRouteConfig={defaultRouteConfig}
-          />
-        </TabItem>
         {/* 
         <TabItem
           id="maps"
@@ -91,6 +79,18 @@ class NavigationLayout extends Component {
             navigatorUID="faves"
             id="faves"
             initialRoute={Router.getRoute('faves')}
+          />
+        </TabItem>
+        <TabItem
+          id="about"
+          title="About"
+          renderIcon={(isSelected) => this.renderIcon("ios-information-circle", isSelected)}
+          renderTitle={this.renderTitle}>
+          <StackNavigation
+            id="about"
+            navigatorUID="about"
+            initialRoute={Router.getRoute('about')}
+            defaultRouteConfig={defaultRouteConfig}
           />
         </TabItem>
       </TabNavigation>

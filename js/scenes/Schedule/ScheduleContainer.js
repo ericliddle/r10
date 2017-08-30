@@ -12,6 +12,8 @@ import {
 
 import Schedule from './Schedule';
 
+import {getFaveData} from '../../redux/modules/faves'
+
 import { getScheduleData } from '../../redux/modules/schedule';
 import { goToSession } from '../../lib/navigationHelpers'
 
@@ -19,11 +21,12 @@ class ScheduleContainer extends Component {
 
   componentDidMount() {
     this.props.dispatch(getScheduleData());
+    this.props.dispatch(getFaveData());
   }
 
   singleSession(item) {
     goToSession('schedule', item);
-  }
+  }  
 
   static route = {
     navigationBar: {
@@ -40,7 +43,9 @@ class ScheduleContainer extends Component {
       return (
         <Schedule
           data={this.props.scheduleData}
-          singleSession={this.singleSession} />
+          singleSession={this.singleSession}
+          favesData={this.faveData}
+           />
       );
     }
   }
@@ -50,6 +55,7 @@ function mapStateToProps(state) {
   return {
     isLoading: state.schedule.loading,
     scheduleData: state.schedule.scheduleData,
+    faveData: state.faves.faveData
   }
 }
 

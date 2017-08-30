@@ -4,7 +4,6 @@ import {
   deleteFave
 } from '../../config/models';
 
-//Actions
 const FAVE_DATA = "FAVE_DATA";
 const FAVE_CREATE = "FAVE_CREATE";
 const FAVE_DELETE = "FAVE_DELETE";

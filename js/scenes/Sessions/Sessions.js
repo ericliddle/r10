@@ -36,9 +36,11 @@ const Sessions = ({ speakerData, sessionData, createFave, deleteFave }) => (
       </TouchableOpacity>
     </View>
     <View>
-      <TouchableOpacity
-      onPress={() => createFave()}
-      >
+      <TouchableOpacity onPress={() => createFave()}>
+        <Text>Add to Faves</Text>
+      </TouchableOpacity>
+  
+      <TouchableOpacity onPress={() => deleteFave()}>
         <Text>Remove from Faves</Text>
       </TouchableOpacity>
     </View>
