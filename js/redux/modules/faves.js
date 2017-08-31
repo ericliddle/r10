@@ -12,7 +12,7 @@ const initialState = {
   fave_id: [],
 }
 
-export function fave_id() {
+export function getFaveId() {
   const favesList = queryFaves();
   return {
     type: FAVE_DATA,
