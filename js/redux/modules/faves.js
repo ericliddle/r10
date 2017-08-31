@@ -9,7 +9,7 @@ const FAVE_CREATE = "FAVE_CREATE";
 const FAVE_DELETE = "FAVE_DELETE";
 
 const initialState = {
-  faveData: [],
+  fave_id: [],
 }
 
 export function getFaveData() {
@@ -40,15 +40,15 @@ export function faveReducer(state = initialState, action) {
   switch (action.type) {
     case FAVE_DATA:
       return {
-        faveData: action.payload,
+        fave_id: action.payload,
       }
     case FAVE_CREATE:
       return {
-        faveData: queryFaves()
+        fave_id: queryFaves()
       }
     case FAVE_DELETE:
       return {
-        faveData: queryFaves()
+        fave_id: queryFaves()
       }
     default:
       return state;

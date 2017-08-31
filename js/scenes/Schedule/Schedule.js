@@ -28,7 +28,7 @@ const Schedule = ({ data, singleSession }) => {
         renderItem={({ item }) => (
           <TouchableOpacity onPress={() => singleSession(item)}>
 
-              <Text style={styles.sessionTitle}>{item.title}</Text>
+            <Text style={styles.sessionTitle}>{item.title}</Text>
             <View style={styles.scheduleContainer}>
               <Text style={styles.sessionLocation}>{item.location} </Text>
               <Icon name={Platform.OS === 'ios' ? 'ios-heart' : 'md-heart'} style={styles.schedHeart} />

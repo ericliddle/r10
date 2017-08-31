@@ -26,7 +26,7 @@ class FavesContainer extends Component {
       )
     } else {
       return <Faves
-        favesData={this.props.faveData}
+        fave_id={this.props.faveData}
       />
     }
   }
@@ -38,7 +38,7 @@ class FavesContainer extends Component {
 
 function mapStateToProps(state) {
   return {
-    favesData: state.favesData,
+    fave_id: state.favesData,
   }
 }
 
