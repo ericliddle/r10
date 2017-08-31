@@ -1,11 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Platform } from 'react-native';
 import {
   Text,
   SectionList,
   TouchableOpacity,
-  View
+  View,
+  Platform
 } from 'react-native';
 
 
@@ -13,8 +13,8 @@ import {
 import Moment from 'moment';
 import Icon from 'react-native-vector-icons/Ionicons';
 
-import { styles } from './styles'
-import { colors, typography } from '../../config/styles'
+import { styles } from './styles';
+import { colors, typography } from '../../config/styles';
 
 const Schedule = ({ data, singleSession }) => {
   return (

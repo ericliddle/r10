@@ -2,15 +2,23 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 
-import { ActivityIndicator } from 'react-native';
 
+import realm from '../../config/models';
 import { getFaveData } from '../../redux/modules/faves';
+import { goToSession } from '../../lib/navigationHelpers'
+
 import Faves from './Faves';
 
 class FavesContainer extends Component {
 
+
   componentDidMount() {
-    this.props.dispatch(getFaveData(this.props.faveData))
+    this.props.dispatch(getFaveData());
+    realm.addListener('change', () => this.props.dispatch(getFaveData()));
+  }
+
+  singleSession(item) {
+    goToSession('faves', item);
   }
 
   static route = {
@@ -20,25 +28,18 @@ class FavesContainer extends Component {
   }
 
   render() {
-    if (this.props.isLoading) {
-      return (
-        <ActivityIndicator animating={true} size="small" color="black" />
-      )
-    } else {
-      return <Faves
-        fave_id={this.props.faveData}
+    return (
+      <Faves 
+      fave_data={this.props.fave_data} 
+      singleSession={this.singleSession}
       />
-    }
+    )
   }
-
-  static propTypes = {
-
-  };
 }
 
 function mapStateToProps(state) {
   return {
-    fave_id: state.favesData,
+    fave_data: state.faves.fave_data
   }
 }
 

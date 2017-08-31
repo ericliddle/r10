@@ -32,4 +32,4 @@ const Faves = {
 const realm = new Realm({ schema: [Faves] });
 console.log(realm.path)
 
-// export default realm;
+export default realm;

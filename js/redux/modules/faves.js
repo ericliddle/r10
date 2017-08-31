@@ -6,10 +6,10 @@ import {
   deleteFave
 } from '../../config/models';
 
-const FAVE_ID = "FAVE_ID";
-const FAVE_DATA = "FAVE_DATA";
-const FAVE_CREATE = "FAVE_CREATE";
-const FAVE_DELETE = "FAVE_DELETE";
+const GET_FAVE_ID = "GET_FAVE_ID";
+const GET_FAVE_DATA = "GET_FAVE_DATA";
+const CREATE_FAVE = "CREATE_FAVE";
+const DELETE_FAVE = "DELETE_FAVE";
 
 const initialState = {
   fave_id: [],
@@ -19,7 +19,7 @@ const initialState = {
 export function getFaveId() {
   const favesList = queryFaves();
   return {
-    type: FAVE_ID,
+    type: GET_FAVE_ID,
     payload: favesList
   }
 }
@@ -27,7 +27,7 @@ export function getFaveId() {
 export function createFaveItem(faveId) {
   const faveCreate = createFave(faveId);
   return {
-    type: FAVE_CREATE,
+    type: CREATE_FAVE,
     payload: faveCreate
   }
 }
@@ -35,7 +35,7 @@ export function createFaveItem(faveId) {
 export function deleteFaveItem(faveId) {
   const faveDelete = deleteFave(faveId);
   return {
-    type: FAVE_DELETE,
+    type: DELETE_FAVE,
     payload: faveDelete
   }
 }
@@ -43,7 +43,7 @@ export function deleteFaveItem(faveId) {
 export function loadFaveData(fave_data) {
   
   return {
-    type: FAVE_DATA,
+    type: GET_FAVE_DATA,
     payload: fave_data
   }
 }
@@ -68,22 +68,22 @@ export function getFaveData() {
 
 export function faveReducer(state = initialState, action) {
   switch (action.type) {
-    case FAVE_ID:
+    case GET_FAVE_ID:
       return {
         ...state,
         fave_id: queryFaves()
       }
-    case FAVE_CREATE:
+    case CREATE_FAVE:
       return {
         ...state,
         fave_id: queryFaves()
       }
-    case FAVE_DELETE:
+    case DELETE_FAVE:
       return {
         ...state,
         fave_id: queryFaves()
       }
-    case FAVE_DATA:
+    case GET_FAVE_DATA:
       return {
         ...state,
         fave_data: action.payload
