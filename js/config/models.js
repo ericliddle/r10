@@ -20,7 +20,7 @@ export const queryFaves = () => {
   return query
 }
 
-const Fave = {
+const Faves = {
   name: 'Fave',
   primaryKey: 'id',
   properties: {
@@ -29,6 +29,7 @@ const Fave = {
   }
 };
 
-const realm = new Realm({ schema: [Fave] });
+const realm = new Realm({ schema: [Faves] });
+console.log(realm.path)
 
 // export default realm;

@@ -41,9 +41,4 @@ const Schedule = ({ data, singleSession }) => {
   )
 }
 
-// Schedule.propTypes = {
-//   balls: PropTypes.arrayOf(PropTypes.object).isRequired
-// }
-
-
 export default Schedule;
