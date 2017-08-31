@@ -12,7 +12,7 @@ const initialState = {
   fave_id: [],
 }
 
-export function getFaveData() {
+export function fave_id() {
   const favesList = queryFaves();
   return {
     type: FAVE_DATA,
@@ -33,6 +33,18 @@ export function deleteFaveItem(faveId) {
   return {
     type: FAVE_DELETE,
     payload: faveDelete
+  }
+}
+
+export function getFaveData() {
+  return function (dispatch) {
+    fetch('https://r10app-95fea.firebaseio.com/sessions.json')
+      .then(response => response.json())
+      .then(data => {
+        const newData = formatSessionData(data)
+        dispatch(loadSchedule(newData));
+      })
+      .catch(error => console.log(`Error fetching JSON: ${error}`));
   }
 }
 
