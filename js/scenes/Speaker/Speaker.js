@@ -12,7 +12,7 @@ import {
   Platform,
   Linking
 } from 'react-native';
-import {goToSession} from '../../lib/navigationHelpers'
+import {goBack} from '../../lib/navigationHelpers'
 import { styles } from './styles'
 import { buttonStyles } from '../../components/ActionButton';
 import Icon from 'react-native-vector-icons/Ionicons';
@@ -21,11 +21,11 @@ import ActionButton from '../../components/ActionButton';
 
 const Speaker = (speakerData) => (
   <ScrollView backgroundColor='black'>
-    <View>
-      <TouchableOpacity onPress={() => goToSession()} >
+    <View style={styles.speakerHeader}>
+      <TouchableOpacity onPress={() => goBack()} style={styles.closeX}>
         <Icon name='ios-close' size={36} color='white' />
-        <Text color='white'>About the Speaker</Text>
       </TouchableOpacity>
+        <Text style={styles.aboutSpeaker}>About the Speaker</Text>
     </View>
     <View style={styles.container}>
       <Image

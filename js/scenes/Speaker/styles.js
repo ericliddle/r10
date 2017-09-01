@@ -13,11 +13,30 @@ export const styles = StyleSheet.create({
     backgroundColor: 'white',
     borderRadius: 10,
   },
+  speakerHeader: {
+    flex: 1,
+    flexDirection: 'row',
+    alignItems: 'center',
+    marginTop: 30,
+    marginBottom: 25
+  },
+  closeX: {
+    marginLeft: 15,
+    width: 20,
+  },
+  aboutSpeaker: {
+    flex: 1,
+    color: 'white',
+    fontFamily: typography.fontMainLight,
+    fontSize: 16,
+    fontWeight: 'bold',
+    marginLeft: 55,
+  },
   speakerImage: {
-    width: 100, 
-    height: 100, 
+    width: 100,
+    height: 100,
     borderRadius: 50,
-    marginBottom: 16, 
+    marginBottom: 16,
   },
   speakerName: {
     fontFamily: typography.fontMain,

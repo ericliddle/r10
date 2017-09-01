@@ -27,7 +27,7 @@ const Schedule = ({ data, singleSession, fave_id }) => {
 
         keyExtractor={(item) => (item.session_id)}
         renderItem={({ item }) => (
-          <TouchableOpacity onPress={() => singleSession(item)}>
+          <TouchableOpacity onPress={() => singleSession(item)} style={styles.border}>
 
             <Text style={styles.sessionTitle}>{item.title}</Text>
             <View style={styles.scheduleContainer}>
