@@ -12,15 +12,17 @@ import {
   Platform,
   Linking
 } from 'react-native';
-
+import {goToSession} from '../../lib/navigationHelpers'
 import { styles } from './styles'
+import { buttonStyles } from '../../components/ActionButton';
 import Icon from 'react-native-vector-icons/Ionicons';
+import ActionButton from '../../components/ActionButton';
 
 
 const Speaker = (speakerData) => (
   <ScrollView backgroundColor='black'>
     <View>
-      <TouchableOpacity>
+      <TouchableOpacity onPress={() => goToSession()} >
         <Icon name='ios-close' size={36} color='white' />
         <Text color='white'>About the Speaker</Text>
       </TouchableOpacity>
@@ -32,12 +34,10 @@ const Speaker = (speakerData) => (
       />
       <Text style={styles.speakerName}>{speakerData.speakerData.name}</Text>
       <Text style={styles.speakerBio}>{speakerData.speakerData.bio}</Text>
-
-      <View>
-        <Button title='Read More on Wikipedia'
-          onPress={() => Linking.openURL(speakerData.speakerData.url).catch(err => ('An error occurred', err))}
-        />
-      </View >
+      <ActionButton
+        onPress={() => Linking.openURL(speakerData.speakerData.url).catch(err => ('An error occurred', err))}
+        text={'Read More on Wikipedia'}
+      />
     </View>
   </ScrollView>
 );
