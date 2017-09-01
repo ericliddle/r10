@@ -16,7 +16,8 @@ import Icon from 'react-native-vector-icons/Ionicons';
 import { styles } from './styles';
 import { colors, typography } from '../../config/styles';
 
-const Schedule = ({ data, singleSession }) => {
+const Schedule = ({ data, singleSession, fave_id }) => {
+
   return (
     <View style={styles.container}>
       <SectionList
@@ -30,9 +31,10 @@ const Schedule = ({ data, singleSession }) => {
 
             <Text style={styles.sessionTitle}>{item.title}</Text>
             <View style={styles.scheduleContainer}>
-              <Text style={styles.sessionLocation}>{item.location} </Text>
-              <Icon name={Platform.OS === 'ios' ? 'ios-heart' : 'md-heart'} style={styles.schedHeart} />
+              <Text style={styles.sessionLocation}>{item.location}</Text>
+              {(fave_id.find(fave => fave.id === item.session_id)) ? <Icon style={styles.heartIcon} name={Platform.OS === 'ios' ? 'ios-heart' : 'md-heart'} /> : null}
             </View>
+
           </TouchableOpacity>
         )}
         sections={data}

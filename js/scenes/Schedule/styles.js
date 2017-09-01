@@ -23,10 +23,10 @@ export const styles = StyleSheet.create({
     paddingLeft: 10,
     paddingRight: 10
   },
-  schedHeart: {
+  heartIcon: {
     fontSize: 18,
     color: colors.red,
-    marginRight: 10
+    paddingRight: 10
   },
   sessionLocation: {
     color: colors.mediumGrey,

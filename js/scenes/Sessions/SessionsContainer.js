@@ -16,10 +16,15 @@ import {
   deleteFaveItem
 } from '../../redux/modules/faves';
 
+import { getFaveId } from '../../redux/modules/faves';
+
+
 class SessionsContainer extends Component {
 
   componentDidMount() {
     this.props.dispatch(getSessionData(this.props.sessionData.speaker));
+    this.props.dispatch(getFaveId());
+    
 
   }
 
@@ -48,6 +53,7 @@ class SessionsContainer extends Component {
         sessionData={this.props.sessionData}
         createFave={() => this.createFave()}
         deleteFave={() => this.deleteFave()}
+        faveId={this.props.faveId}
       />
     }
   }
@@ -56,6 +62,7 @@ class SessionsContainer extends Component {
 function mapStateToProps(state) {
   return {
     speakerData: state.session.sessionData,
+    faveId: state.faves.fave_id,
   }
 }
 
